@@ -29,6 +29,17 @@
                     <input type="submit" class="submit_button" value="Войти">
                 </div>
             </form>
+            <div class="alternatives_wrapper">
+                <form action="https://github.com/login/oauth/authorize" method="GET">
+                    <input hidden type="text" name="client_id" value="3849d58cb5cf51a635fb">
+                    <div class="input_wrapper">
+                        <div class="input_wrapper submit_button_wrapper">
+                            <button onclick="(event) => event.submit();" class="github_submit_button">Войти с помощью
+                                GitHub<img width="24" height="24" src="../assets/github_logo.svg">
+                            </button>
+                        </div>
+                </form>
+            </div>
             <div class="else">
                 <a class="link" href="/signUp">Нет аккаунта?</a>
             </div>
