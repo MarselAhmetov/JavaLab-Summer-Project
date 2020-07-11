@@ -106,5 +106,12 @@
 }
 
 .github_submit_button {
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.github_submit_button > img {
+    padding-left: 0.5rem;
 }
