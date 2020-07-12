@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class SignUpController {
-    @GetMapping("/signUp")
-    public ModelAndView getSignUpPage() {
-        ModelAndView modelAndView = new ModelAndView("ftlh/signUp");
+public class SignInController {
+    @GetMapping("/signIn")
+    public ModelAndView getSignInPage() {
+        ModelAndView modelAndView = new ModelAndView("ftlh/signIn");
         return modelAndView;
     }
 
-    @PostMapping("/signUp")
-    public ModelAndView signUp() {
+    @PostMapping("/signIn")
+    public ModelAndView signIn() {
         ModelAndView modelAndView = new ModelAndView();
         return modelAndView;
     }
