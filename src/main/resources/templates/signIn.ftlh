@@ -35,7 +35,17 @@
                     <div class="input_wrapper">
                         <div class="input_wrapper submit_button_wrapper">
                             <button onclick="(event) => event.submit();" class="github_submit_button">Войти с помощью
-                                GitHub<img width="24" height="24" src="../assets/github_logo.svg">
+                                GitHub<img alt="" width="24" height="24" src="../assets/github_logo.svg">
+                            </button>
+                        </div>
+                </form>
+                <!--TODO: fix gitlab login -->
+                <form action=https://gitlab.example.com/oauth/authorize" method="GET">
+                    <input hidden type="text" name="client_id" value="4c1ec1c3abdabd342377eab257c39d16063d0d96d9b0e87e519e8376b4c47679">
+                    <div class="input_wrapper">
+                        <div class="input_wrapper submit_button_wrapper">
+                            <button onclick="(event) => event.submit();" class="github_submit_button">Войти с помощью
+                                GitLab<img width="24" height="24" src="../assets/GitLab_Logo.svg" alt="">
                             </button>
                         </div>
                 </form>
