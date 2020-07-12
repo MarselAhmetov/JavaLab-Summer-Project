@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class SignUpDto {
-    String name;
-    String surname;
-    String email;
-    String password;
-    Boolean teacher;
-    Boolean student;
-    Boolean employer;
+    private String name;
+    private String surname;
+    private String email;
+    private String password;
+    private Boolean teacher;
+    private Boolean student;
+    private Boolean employer;
 }

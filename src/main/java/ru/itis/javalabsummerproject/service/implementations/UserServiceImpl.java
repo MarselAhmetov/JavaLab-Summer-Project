@@ -6,6 +6,7 @@ import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.repositories.UserRepository;
 import ru.itis.javalabsummerproject.service.interfaces.UserService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -23,5 +24,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         userRepository.save(user);
+    }
+
+    @Override
+    public void delete(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return userRepository.findAll();
     }
 }
