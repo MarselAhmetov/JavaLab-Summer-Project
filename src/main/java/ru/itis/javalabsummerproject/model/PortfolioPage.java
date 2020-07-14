@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table("PORTFOLIO_PAGE")
+@Table
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

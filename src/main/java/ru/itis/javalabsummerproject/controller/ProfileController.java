@@ -10,6 +10,7 @@ public class ProfileController {
     @GetMapping("/profile")
     public ModelAndView getProfilePage() {
         ModelAndView modelAndView = new ModelAndView("profile");
+
         return modelAndView;
     }
 }

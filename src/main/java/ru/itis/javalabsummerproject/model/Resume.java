@@ -17,35 +17,21 @@ import javax.persistence.Table;
 import java.util.List;
 
 @Entity
-@Table("RESUME")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Resume implements Identified {
+public class Resume {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer age;
-    private String firstName;
-    private String sex;
-    private String middleName;
-    private String lastName;
-    private String vacancyName;
+    private String resumeName;
     private Integer desiredSalary;
-
     @ElementCollection
     private List<String> competences;
     private String aboutMe;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Portfolio portfolio;
-//    private String skills;
-    //    private Object image;
 
-
-    @Override
-    public Long getId() {
-        return id;
-    }
 }

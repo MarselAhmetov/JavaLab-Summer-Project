@@ -5,26 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.CascadeType;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.List;
 
 @Entity
-@Table("VACANCY")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Vacancy implements Identified {
+public class Vacancy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,16 +24,11 @@ public class Vacancy implements Identified {
     private Date date;
     private String requirements;
 
-    @ElementCollection
-    private List<String> competenceList;
+    @OneToMany
+    private List<Competence> competenceList;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 
-
-    @Override
-    public Long getId() {
-        return id;
-    }
 }

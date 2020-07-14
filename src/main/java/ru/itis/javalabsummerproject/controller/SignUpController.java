@@ -12,7 +12,7 @@ import ru.itis.javalabsummerproject.service.interfaces.SignUpService;
 public class SignUpController {
 
     @Autowired
-    SignUpService signUpService;
+    private SignUpService signUpService;
 
     @GetMapping("/signUp")
     public ModelAndView getSignUpPage() {
