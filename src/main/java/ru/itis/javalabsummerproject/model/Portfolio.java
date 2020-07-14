@@ -17,6 +17,15 @@ public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    private String topic;
+    private String content;
+    private Boolean isConfirmed;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private List<PortfolioPage> portfolioPages;
+    private List<User> confirmedBy;
+
 }

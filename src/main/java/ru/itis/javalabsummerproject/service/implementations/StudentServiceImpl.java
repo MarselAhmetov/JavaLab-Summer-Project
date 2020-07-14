@@ -3,6 +3,7 @@ package ru.itis.javalabsummerproject.service.implementations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.itis.javalabsummerproject.model.Student;
+import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.repositories.StudentRepository;
 import ru.itis.javalabsummerproject.service.interfaces.StudentService;
 
@@ -25,5 +26,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void delete(Student company) {
         studentRepository.delete(company);
+    }
+
+    @Override
+    public Student getByUser(User user) {
+        return studentRepository.getByUser(user);
     }
 }
