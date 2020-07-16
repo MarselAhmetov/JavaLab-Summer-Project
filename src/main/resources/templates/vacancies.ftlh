@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <#include "common/header.ftlh"/>
     <main>
         <#if vacancies?? && (vacancies?has_content)>
             <#list vacancies as vacancy>

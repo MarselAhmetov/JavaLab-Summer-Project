@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <#include "common/header.ftlh" />
     <#if students?? && students?has_content>
         <#list students as student>
             <div>${student}</div>

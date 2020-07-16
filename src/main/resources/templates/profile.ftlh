@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <#include "common/header.ftlh"/>
     <main>
         <#list user.roles as role>
             <#if (role.authority=="STUDENT" )>
