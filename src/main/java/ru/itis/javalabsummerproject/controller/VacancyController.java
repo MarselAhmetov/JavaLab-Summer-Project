@@ -11,6 +11,7 @@ public class VacancyController {
     @GetMapping("/vacancy")
     public ModelAndView getVacanciesPage() {
         ModelAndView modelAndView = new ModelAndView("vacancies");
+
         return modelAndView;
     }
 

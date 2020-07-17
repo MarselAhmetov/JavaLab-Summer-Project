@@ -10,15 +10,24 @@
 <body>
     <#include "common/header.ftlh"/>
     <main>
-        <#list user.roles as role>
-            <#if (role.authority=="STUDENT" )>
+        <#if user??>
+            <#if (user.role =="STUDENT" )>
                 <div>Я студент!</div>
-                <#elseif (role.authority=="EMPLOYER" ) />
+            <#elseif (user.role =="EMPLOYER" )>
                 <div>Я работодатель!</div>
-                <#elseif (role.authority=="TEACHER" ) />
+            <#elseif user.role ="TEACHER">
                 <div>Я преподаватель!</div>
             </#if>
-        </#list>
+        <#else>
+            <div>User кончался</div>
+        </#if>
+        <#if resumes?? && resumes?has_content>
+            <#list resumes as resume>
+                <div>${resume}</div>
+            </#list>
+        <#else>
+            <div>Ваши резюме отстутствуют</div>
+        </#if>
     </main>
 </body>
 

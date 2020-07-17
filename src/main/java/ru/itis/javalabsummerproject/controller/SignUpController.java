@@ -22,6 +22,7 @@ public class SignUpController {
     @PostMapping("/signUp")
     public ModelAndView signUp(SignUpDto signUpDto) {
         ModelAndView modelAndView = new ModelAndView("redirect:/signIn");
+        System.out.println(signUpDto);
         signUpService.signUp(signUpDto);
         return modelAndView;
     }

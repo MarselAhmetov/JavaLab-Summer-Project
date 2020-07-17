@@ -43,7 +43,7 @@ public class SignUpServiceImpl implements SignUpService {
             Company company = Company.builder()
                     .user(user)
                     .build();
-            role = Role.EMPLOYER;
+            user.setRole(Role.EMPLOYER);
             userService.save(user);
             companyService.save(company);
         }
@@ -51,7 +51,7 @@ public class SignUpServiceImpl implements SignUpService {
             Student student = Student.builder()
                     .user(user)
                     .build();
-            role = Role.STUDENT;
+            user.setRole(Role.STUDENT);
             userService.save(user);
             studentService.save(student);
         }
@@ -59,11 +59,9 @@ public class SignUpServiceImpl implements SignUpService {
             Teacher teacher = Teacher.builder()
                     .user(user)
                     .build();
-            role = Role.TEACHER;
+            user.setRole(Role.TEACHER);
             userService.save(user);
             teacherService.save(teacher);
         }
-
-        user.setRole(role);
     }
 }

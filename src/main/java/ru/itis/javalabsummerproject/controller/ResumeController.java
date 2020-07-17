@@ -29,13 +29,14 @@ public class ResumeController {
     private CompetenceService competenceService;
 
     @GetMapping("/resumes")
-    public ModelAndView getPortfolioPage(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+    public ModelAndView getPortfolioPage(@AuthenticationPrincipal UserDetailsImpl userDetails) {
         ModelAndView modelAndView = new ModelAndView();
-        User user = userService.getById(id);
+        Long userId = userDetails.getUser().getId();
+        User user = userService.getById(userId);
         if (user != null) {
             modelAndView.addObject("resumes", resumeService.getAllByUser(user));
         }
-        modelAndView.setViewName("redirect:/profile/" + id);
+        modelAndView.setViewName("redirect:/profile/" + userId);
         return modelAndView;
     }
 
