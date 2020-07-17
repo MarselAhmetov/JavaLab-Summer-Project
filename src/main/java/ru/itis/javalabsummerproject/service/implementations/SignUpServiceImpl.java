@@ -37,13 +37,13 @@ public class SignUpServiceImpl implements SignUpService {
                 .password(passwordEncoder.encode(signUpDto.getPassword()))
                 .build();
 
-        List<Role> roles = new ArrayList<>(3);
+        Role role = null;
 
         if (signUpDto.getEmployer() != null) {
             Company company = Company.builder()
                     .user(user)
                     .build();
-            roles.add(Role.EMPLOYER);
+            role = Role.EMPLOYER;
             userService.save(user);
             companyService.save(company);
         }
@@ -51,7 +51,7 @@ public class SignUpServiceImpl implements SignUpService {
             Student student = Student.builder()
                     .user(user)
                     .build();
-            roles.add(Role.STUDENT);
+            role = Role.STUDENT;
             userService.save(user);
             studentService.save(student);
         }
@@ -59,11 +59,11 @@ public class SignUpServiceImpl implements SignUpService {
             Teacher teacher = Teacher.builder()
                     .user(user)
                     .build();
-            roles.add(Role.TEACHER);
+            role = Role.TEACHER;
             userService.save(user);
             teacherService.save(teacher);
         }
 
-        user.setRoles(roles);
+        user.setRole(role);
     }
 }
