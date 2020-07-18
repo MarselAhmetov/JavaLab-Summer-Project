@@ -7,9 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class SignInController {
+
     @GetMapping("/signIn")
     public ModelAndView getSignInPage() {
         ModelAndView modelAndView = new ModelAndView("signIn");
         return modelAndView;
     }
+
+   
 }

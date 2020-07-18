@@ -13,6 +13,7 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "javalab_user")
 public class User {
 
     @Id
