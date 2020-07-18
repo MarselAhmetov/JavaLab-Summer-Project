@@ -10,4 +10,5 @@ public interface PortfolioService {
     void save(Portfolio portfolio);
     void delete(Portfolio portfolio);
     List<Portfolio> getAllByUser(User user);
+    List<Portfolio> findAll();
 }

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -25,7 +26,7 @@ public class Portfolio {
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
-    private List<User> confirmedBy;
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Set<User> confirmedBy;
 
 }

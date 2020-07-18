@@ -6,6 +6,6 @@ import ru.itis.javalabsummerproject.model.User;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<User> getByEmail(String email);
-    Optional<User> getByUsername(String username);
+    User getByEmail(String email);
+    User getByUsername(String username);
 }

@@ -10,4 +10,5 @@ public interface ResumeService {
     void save(Resume resume);
     void delete(Resume resume);
     List<Resume> getAllByUser(User user);
+    List<Resume> findAll();
 }

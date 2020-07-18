@@ -14,12 +14,11 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
     public User getByEmail(String email) {
-        Optional<User> userOptional = userRepository.getByEmail(email);
-        return userOptional.orElse(null);
+        return userRepository.getByEmail(email);
     }
 
     @Override
@@ -44,12 +43,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getByUsername(String username) {
-        return userRepository.getByUsername(username).orElse(null);
+        return userRepository.getByUsername(username);
     }
 
     @Override
     public User update(UserDto userDto) {
-        User user = userRepository.getByUsername(userDto.getUsername()).orElse(null);
+        User user = userRepository.getByUsername(userDto.getUsername());
         if (user != null) {
             user.setEmail(userDto.getEmail());
             user.setUsername(userDto.getUsername());

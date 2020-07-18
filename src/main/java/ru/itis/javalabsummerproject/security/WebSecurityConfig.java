@@ -4,6 +4,7 @@ package ru.itis.javalabsummerproject.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -31,13 +32,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
         http.authorizeRequests()
-                .antMatchers("/signUp", "/signIn", "/").permitAll()
-                .antMatchers("/profile").authenticated();
+                .antMatchers("/signUp", "/signIn").permitAll()
+                .antMatchers("/").authenticated();
 
         http.formLogin()
                 .loginPage("/signIn")
                 .usernameParameter("email")
-                .defaultSuccessUrl("/profile")
+                .defaultSuccessUrl("/")
                 .failureUrl("/signIn?error")
                 .permitAll();
     }

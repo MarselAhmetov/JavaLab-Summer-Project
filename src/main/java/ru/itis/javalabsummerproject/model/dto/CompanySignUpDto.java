@@ -9,12 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class SignUpDto {
+public class CompanySignUpDto extends UserDto {
+    private String address;
     private String name;
-    private String surname;
-    private String email;
-    private String password;
-    private Boolean teacher;
-    private Boolean student;
-    private Boolean employer;
+    private String description;
 }

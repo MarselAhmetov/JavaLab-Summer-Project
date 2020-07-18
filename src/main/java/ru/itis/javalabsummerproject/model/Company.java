@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Company {
     private String description;
 
     @OneToOne
+    @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private User user;
 
     @OneToMany(mappedBy = "company")

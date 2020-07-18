@@ -17,18 +17,22 @@
         <h2 class="title">Регистрация</h2>
     </div>
     <div class="form_wrapper">
-        <form action="/signUp" method="POST" class="form">
+        <form action="/signUp/company" method="POST" class="form">
             <div class="input_wrapper">
-                <label class="input_label">Имя</label>
+                <label class="input_label">Название организации</label>
                 <input type="text" name="name" class="input" />
             </div>
             <div class="input_wrapper">
-                <label class="input_label">Фамилия</label>
-                <input type="text" name="surname" class="input" />
+                <label class="input_label">Адрес оргацизации</label>
+                <input type="text" name="address" class="input" />
             </div>
             <div class="input_wrapper">
-                <label class="input_label">Отчество (если есть)</label>
-                <input type="text" name="patronymic" class="input" />
+                <label class="input_label">Опсание</label>
+                <textarea type="text" name="description" class="input" rows="3"></textarea>
+            </div>
+            <div class="input_wrapper">
+                <label class="input_label">Имя пользователя</label>
+                <input type="text" name="username" class="input" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Электронная почта</label>
@@ -44,18 +48,6 @@
             </div>
             <div class="input_label_wrapper">
                 <label class="input_label">Кто вы?</label>
-            </div>
-            <div class="checkboxes">
-                <label class="checkbox_label">
-                    <input type="checkbox" name="student">Я студент
-                </label>
-                <label class="checkbox_label">
-                    <input type="checkbox" name="teacher">Я преподаватель
-                </label>
-                <label class="checkbox_label">
-                    <input type="checkbox" name="employer">Я работодатель
-                </label>
-
             </div>
             <div class="input_wrapper submit_button_wrapper">
                 <input type="submit" class="submit_button" value="Зарегистрироваться">

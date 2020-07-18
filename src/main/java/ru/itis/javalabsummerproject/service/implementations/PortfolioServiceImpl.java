@@ -34,4 +34,9 @@ public class PortfolioServiceImpl implements PortfolioService {
     public List<Portfolio> getAllByUser(User user) {
         return portfolioRepository.getAllByUser(user);
     }
+
+    @Override
+    public List<Portfolio> findAll() {
+        return portfolioRepository.findAll();
+    }
 }

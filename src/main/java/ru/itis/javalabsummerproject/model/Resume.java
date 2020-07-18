@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -21,6 +22,7 @@ public class Resume {
     private String resumeName;
     private Integer desiredSalary;
     private String aboutMe;
+    private LocalDate creationTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
@@ -28,7 +30,7 @@ public class Resume {
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Competence> competences;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(fetch = FetchType.EAGER)
     private Portfolio portfolio;
 
 }

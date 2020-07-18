@@ -34,4 +34,9 @@ public class ResumeServiceImpl implements ResumeService {
     public List<Resume> getAllByUser(User user) {
         return resumeRepository.getAllByUser(user);
     }
+
+    @Override
+    public List<Resume> findAll() {
+        return resumeRepository.findAll();
+    }
 }

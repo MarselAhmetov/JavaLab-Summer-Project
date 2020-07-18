@@ -7,15 +7,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class StudentsListController {
-    @GetMapping("/student")
+    @GetMapping("/students")
     public ModelAndView getVacanciesPage() {
         ModelAndView modelAndView = new ModelAndView("students");
         return modelAndView;
     }
 
-    @GetMapping("/student/{id}")
-    public ModelAndView getVacancyPage(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView();
-        return modelAndView;
-    }
 }
