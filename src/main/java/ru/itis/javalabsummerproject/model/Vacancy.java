@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -18,17 +19,18 @@ public class Vacancy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private int minSalary;
-    private int maxSalary;
-    private Date date;
+
+    private String vacancyName;
+    private Integer minSalary;
+    private Integer maxSalary;
+    private LocalDateTime creationDate;
     private String requirements;
+    private String description;
 
-    @OneToMany
-    private List<Competence> competenceList;
+    @OneToMany(fetch = FetchType.EAGER)
+    private List<Competence> competencies;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
-    private Company company;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private User user;
 
 }

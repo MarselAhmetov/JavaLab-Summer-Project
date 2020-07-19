@@ -31,11 +31,15 @@ public class ProfileController {
     @GetMapping("/student/{id}")
     public ModelAndView getStudent(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         ModelAndView modelAndView = new ModelAndView("student");
+        modelAndView.addObject("principal", userDetails);
         User user = userService.getById(id);
         if (user != null) {
             Student student = studentService.getByUser(user);
-            modelAndView.addObject("principal", userDetails);
-            modelAndView.addObject("student", student);
+            if (student != null) {
+                modelAndView.addObject("student", student);
+            } else {
+                modelAndView.setViewName("404");
+            }
         } else {
             modelAndView.setViewName("404");
         }
@@ -45,10 +49,15 @@ public class ProfileController {
     @GetMapping("/teacher/{id}")
     public ModelAndView getTeacher(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         ModelAndView modelAndView = new ModelAndView("teacher");
-        Teacher teacher = teacherService.getById(id);
-        if (teacher != null) {
-            modelAndView.addObject("principal", userDetails);
-            modelAndView.addObject("teacher", teacher);
+        modelAndView.addObject("principal", userDetails);
+        User user = userService.getById(id);
+        if (user != null) {
+            Teacher teacher = teacherService.getByUser(user);
+            if (teacher != null) {
+                modelAndView.addObject("teacher", teacher);
+            } else {
+                modelAndView.setViewName("404");
+            }
         } else {
             modelAndView.setViewName("404");
         }
@@ -57,11 +66,16 @@ public class ProfileController {
 
     @GetMapping("/company/{id}")
     public ModelAndView getCompany(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        ModelAndView modelAndView = new ModelAndView();
-        Company company = companyService.getById(id);
-        if (company != null) {
-            modelAndView.addObject("principal", userDetails);
-            modelAndView.addObject("company", company);
+        ModelAndView modelAndView = new ModelAndView("company");
+        modelAndView.addObject("principal", userDetails);
+        User user = userService.getById(id);
+        if (user != null) {
+            Company company = companyService.getByUser(user);
+            if (company != null) {
+                modelAndView.addObject("company", company);
+            } else {
+                modelAndView.setViewName("404");
+            }
         } else {
             modelAndView.setViewName("404");
         }

@@ -34,12 +34,7 @@
                     <p class="card-text">${portfolio.content}</p>
                 </div>
                 <div class="card-footer text-muted">
-                    Confirmed? -
-                    <#if portfolio.isConfirmed>
-                        True
-                    <#else>
-                        False
-                    </#if>
+                    Confirmed?
                 </div>
             </div>
         </div>

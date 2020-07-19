@@ -31,6 +31,11 @@ public class CompetenceServiceImpl implements CompetenceService {
     }
 
     @Override
+    public List<Competence> findAll() {
+        return competenceRepository.findAll();
+    }
+
+    @Override
     public Competence getByName(String name) {
         return competenceRepository.getByName(name);
     }

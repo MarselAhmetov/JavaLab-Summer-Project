@@ -26,7 +26,4 @@ public class Company {
     @OneToOne
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private User user;
-
-    @OneToMany(mappedBy = "company")
-    private List<Vacancy> vacancies;
 }
