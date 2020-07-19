@@ -43,6 +43,8 @@
                             <#case "STUDENT">
                                 <a class="dropdown-item" href="/resumes/${principal.user.id}">My resumes</a>
                                 <a class="dropdown-item" href="/portfolios/${principal.user.id}">My portfolios</a>
+                                <a class="dropdown-item" href="/responses">My responses</a>
+                                <a class="dropdown-item" href="/invitations">Invitations</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/student/${principal.user.id}">Profile</a>
                                 <#break>
@@ -51,11 +53,13 @@
                                 <#break>
                             <#case "COMPANY">
                                 <a class="dropdown-item" href="/vacancies/${principal.user.id}">My vacancies</a>
+                                <a class="dropdown-item" href="/invitations">My invitations</a>
+                                <a class="dropdown-item" href="/responses">Responses</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/company/${principal.user.id}">Profile</a>
                                 <#break>
                         </#switch>
-
+                        <a class="dropdown-item" href="/logout">Logout</a>
                     </div>
                 </div>
             <#else>

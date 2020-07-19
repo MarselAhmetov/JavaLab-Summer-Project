@@ -18,6 +18,10 @@ public class Response {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime responseTime;
+    private String text;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Company company;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Student student;
