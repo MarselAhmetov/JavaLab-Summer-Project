@@ -9,6 +9,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -24,7 +25,7 @@ public class Resume {
     private String resumeName;
     private Integer desiredSalary;
     private String aboutMe;
-    private LocalDate creationTime;
+    private LocalDateTime creationTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;

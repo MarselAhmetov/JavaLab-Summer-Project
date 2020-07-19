@@ -16,7 +16,7 @@ import ru.itis.javalabsummerproject.service.interfaces.PortfolioService;
 import ru.itis.javalabsummerproject.service.interfaces.ResumeService;
 import ru.itis.javalabsummerproject.service.interfaces.UserService;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -69,6 +69,7 @@ public class ResumeController {
         return modelAndView;
     }
 
+    // TODO: 19.07.2020 Доступно только студентам
     @PostMapping("/resume/create")
     public ModelAndView newPortfolio(ResumeDto resumeDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         ModelAndView modelAndView = new ModelAndView("redirect:/resumes/" + userDetails.getUser().getId());
@@ -79,7 +80,7 @@ public class ResumeController {
                 .desiredSalary(resumeDto.getDesiredSalary())
                 .competences(competenceService.getCompetencesFromStringList(resumeDto.getCompetences()))
                 .portfolio(portfolioService.getById(resumeDto.getPortfolio()))
-                .creationTime(LocalDate.now())
+                .creationTime(LocalDateTime.now())
                 .user(userDetails.getUser())
                 .build();
 

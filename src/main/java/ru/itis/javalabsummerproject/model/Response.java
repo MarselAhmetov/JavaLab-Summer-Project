@@ -6,23 +6,25 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
-import java.util.Set;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class Portfolio {
+public class Response {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String topic;
-    private String content;
+    private LocalDateTime responseTime;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    private User user;
+    private Student student;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Resume resume;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Vacancy vacancy;
 }

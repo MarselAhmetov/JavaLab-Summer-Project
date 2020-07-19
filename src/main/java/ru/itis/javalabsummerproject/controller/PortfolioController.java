@@ -71,7 +71,6 @@ public class PortfolioController {
                 .topic(portfolioDto.getTopic())
                 .content(portfolioDto.getContent())
                 .user(userDetails.getUser())
-                .isConfirmed(false)
                 .build();
 
         portfolioService.save(portfolio);
