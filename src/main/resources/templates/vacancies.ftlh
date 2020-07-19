@@ -16,6 +16,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
 </head>
 
 <body class="body">
@@ -92,8 +93,8 @@
                                 <input type="number" name="maxSalary" class="form-control"
                                        placeholder="Максимальная зарплата"/>
                             </div>
-                            <div class="form-group">
-                                <input class="form-control" type="text" list="competencies" name="competence"/>
+                            <div class="form-group" id="competenciesFields">
+                                <button type="button" class="btn btn-primary" id="competenciesButton" onclick="addField()">Add competence</button>
                                 <datalist id="competencies">
                                     <#list competencies as competence>
                                         <option value="${competence.name}">${competence.name}</option>
