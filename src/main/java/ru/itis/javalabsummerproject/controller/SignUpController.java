@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.itis.javalabsummerproject.model.dto.CompanySignUpDto;
 import ru.itis.javalabsummerproject.model.dto.StudentSignUpDto;
 import ru.itis.javalabsummerproject.model.dto.TeacherSignUpDto;
-import ru.itis.javalabsummerproject.model.enamuration.Role;
+import ru.itis.javalabsummerproject.model.enumiration.Role;
 import ru.itis.javalabsummerproject.service.interfaces.SignUpService;
 
 @Controller
@@ -17,6 +17,11 @@ public class SignUpController {
 
     @Autowired
     private SignUpService signUpService;
+
+    @GetMapping("/signUp")
+    public String getSignUp () {
+        return "signUp";
+    }
 
     @GetMapping("/signUp/{role}")
     public ModelAndView getSignUpPage(@PathVariable String role) {

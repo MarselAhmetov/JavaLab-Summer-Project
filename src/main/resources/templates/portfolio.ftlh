@@ -4,18 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
+    <title>${portfolio.topic}</title>
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 
 <body class="body">
@@ -26,12 +17,14 @@
         <div class="col-1"></div>
         <div class="col-10">
             <div class="card text-center">
-                <div class="card-header">
-                    ${portfolio.user.username}
+                <div class="card-header h3">
+                    <h3>${portfolio.topic}</h3>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">${portfolio.topic}</h5>
-                    <p class="card-text">${portfolio.content}</p>
+                    <p class="card-text h5 mb-2">Описание: </p>
+                    <p class="card-text mb-2">${portfolio.content}</p>
+                    <p class="card-text text-muted h6">Создатель: ${portfolio.user.username}</p>
+                    <p class="card-text text-center h6"><a href="/portfolios/${principal.user.id}" class="btn btn-secondary"><- Вернуться к списку портфолио</a></p>
                 </div>
                 <div class="card-footer text-muted">
                     Confirmed?

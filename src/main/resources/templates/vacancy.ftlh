@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>Вакансия: ${vacancy.vacancyName}</title>
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 
 <body class="body">
@@ -16,28 +14,36 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="card text-center">
-                <div class="card-header">
-                    ${vacancy.user.username}
+        <div class="col-2"></div>
+        <div class="col">
+            <div class="card">
+                <div class="card-header h3 text-center">
+                    <p class="h3 card-title">Вакансия: ${vacancy.vacancyName}</p>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">${vacancy.vacancyName}</h5>
-                    <p class="card-text">Требования:</p>
-                    <p class="card-text">${vacancy.requirements}</p>
-                    <p class="card-text">Описание:</p>
-                    <p class="card-text">${vacancy.description}</p>
-                    <#list vacancy.competencies as competence>
-                        <p class="card-text">${competence.name}</p>
-                    </#list>
+                    <p class="card-text h4 text-center">Требования:</p>
+                    <p class="card-text h5 ml-4">${vacancy.requirements}</p>
+                    <p class="card-text h4 text-center">Описание:</p>
+                    <p class="card-text h5 ml-4">${vacancy.description}</p>
+                    <#if vacancy.competencies?? && vacancy.competencies?has_content>
+                        <#list vacancy.competencies as competence>
+                            <#if competence?is_first><span class="h5 ml-4">Список компетенций:</span></#if>
+                            <p class="card-text btn btn-secondary h5">${competence.name}</p>
+                        </#list>
+                    <#else>
+                        <span class="h5 ml-4">Список компетенций: Не указано</span>
+                    </#if>
+                    <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
+                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="/vacancies"><- Вернуться к списку
+                            вакансий</a>
+                    </p>
                 </div>
-                <div class="card-footer text-muted">
-                    Created at: ${vacancy.creationDate}
+                <div class="card-footer text-muted text-center">
+                    Дата создания: ${vacancy.creationDate}
                 </div>
             </div>
         </div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
     </div>
 </div>
 </body>

@@ -7,7 +7,6 @@
 }
 
 .bg-image {
-  /* The image used */
   background-image: url(https://d1g0wnc5fu8si1.cloudfront.net/thekey/images/gallery-images/JUtUkVixQhb1JrqKaNXk7wdZz5lKfvQNvTQJ4TSZ.jpeg);
   filter: blur(4px);
   -webkit-filter: blur(4px);
@@ -78,7 +77,6 @@
 .submit_button_wrapper, .else {
     text-align: center;
     margin-top: 0.5rem;
-    padding-bottom: 0;
 }
 
 .submit_button {
@@ -86,20 +84,10 @@
     color: ghostwhite;
     outline: none;
     border: none;
-    width: 50%;
     font-size: 1.2rem;
     margin: 0 auto;
 }
 
 .submit_button:hover {
     background-color: #016801;
-}
-
-.else .link{
-    text-decoration: none;
-    color: black;
-}
-
-.link:hover {
-    color: grey;
 }

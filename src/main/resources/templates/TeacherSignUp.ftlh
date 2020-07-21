@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Регистрация Преподавателя</title>
+    <#include "common/head-common.ftlh">
     <link rel="stylesheet" type="text/css" href="/css/common.css">
     <link rel="stylesheet" type="text/css" href="/css/signUp.css">
     <script src="/js/signUp.js"></script>
@@ -13,6 +14,9 @@
 <body class="body">
 <div class="bg-image"></div>
 <main class="content_wrapper">
+    <div class="back_wrapper">
+        <a href="/signUp" class="back link"><- Назад</a>
+    </div>
     <div class="title_wrapper">
         <h2 class="title">Регистрация</h2>
     </div>

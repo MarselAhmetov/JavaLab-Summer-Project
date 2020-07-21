@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <title>Компания ${company.name}</title>
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 
 <body class="body">
@@ -16,30 +14,44 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <form action="/edit/company">
+        <div class="col-2"></div>
+        <div class="col">
+            <div class="text-center">
+                <p class="card-text h4 mb-4">Информация о компании ${company.name} </p>
+            </div>
+            <form action="/edit/company" class="mb-4">
                 <div class="form-group">
+                    <label class="ml-4 h4">Электронная почта</label>
                     <input type="email" name="email" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Enter email" value="${company.user.email}">
                 </div>
                 <div class="form-group">
+                    <label class="ml-4 h4">Юзернейм</label>
                     <input type="text" name="username" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Text" value="${company.user.username}">
                 </div>
                 <div class="form-group">
+                    <label class="ml-4 h4">Название компании</label>
                     <input type="text" name="name" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Text" value="${company.name}">
                 </div>
                 <div class="form-group">
+                    <label class="ml-4 h4">Физ. адрес</label>
                     <input type="text" name="address" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Text" value="${company.address}">
                 </div>
                 <div class="form-group">
+                    <label class="ml-4 h4">Описание</label>
                     <input type="text" name="description" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Text" value="${company.description}">
                 </div>
                 <#if principal?? && principal.user.id == company.user.id>
-                    <input type="submit" class="btn btn-primary" placeholder="Submit">
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-primary" placeholder="Submit">
+                    </div>
                 </#if>
             </form>
+            <div class="text-center">
+                <p class="h4 mb-4">Дополнительно: </p>
+                <a class="btn btn-primary" href="/vacancies/${company.user.id}">Вакансии компании</a>
+            </div>
         </div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
     </div>
 </div>
 </body>

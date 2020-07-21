@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Авторизация</title>
-    <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/signIn.css">
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/signIn.css">
 </head>
 
 <body class="body">
@@ -19,14 +20,14 @@
         <form action="/signIn" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Электронная почта</label>
-                <input type="email" name="email" class="input" />
+                <input type="email" name="email" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Пароль</label>
-                <input type="password" name="password" class="input" />
+                <input type="password" name="password" class="input form-control" />
             </div>
             <div class="input_wrapper submit_button_wrapper">
-                <input type="submit" class="submit_button" value="Войти">
+                <input type="submit" class="submit_button form-control" value="Войти">
             </div>
         </form>
         <div class="alternatives_wrapper">
@@ -34,10 +35,11 @@
                 <input hidden type="text" name="client_id" value="3849d58cb5cf51a635fb">
                 <div class="input_wrapper">
                     <div class="input_wrapper submit_button_wrapper">
-                        <button onclick="(event) => event.submit();" class="github_submit_button">Войти с помощью
-                            GitHub<img width="24" height="24" src="../assets/github_logo.svg">
+                        <button onclick="(event) => event.submit();" class="github_submit_button form-control">Войти с помощью
+                            GitHub<img width="24" height="24" src="img/github_logo.svg">
                         </button>
                     </div>
+                </div>
             </form>
         </div>
         <div class="else">
