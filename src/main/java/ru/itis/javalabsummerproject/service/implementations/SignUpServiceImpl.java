@@ -11,14 +11,9 @@ import ru.itis.javalabsummerproject.model.dto.CompanySignUpDto;
 import ru.itis.javalabsummerproject.model.dto.StudentSignUpDto;
 import ru.itis.javalabsummerproject.model.dto.TeacherSignUpDto;
 import ru.itis.javalabsummerproject.model.dto.UserDto;
-import ru.itis.javalabsummerproject.model.enamuration.Role;
 import ru.itis.javalabsummerproject.service.interfaces.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @Service
 public class SignUpServiceImpl implements SignUpService {

@@ -4,18 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-            crossorigin="anonymous"></script>
+    <title>Список резюме</title>
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 
 <body class="body">
@@ -23,36 +14,38 @@
 <br>
 <div class="container">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-2"></div>
+        <div class="col">
             <#if user?? && principal??>
                 <#if user.id == principal.user.id>
-                    <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal"
-                            data-target="#exampleModal">Create resume
+                    <button type="button" class="btn btn-primary btn-lg btn-block mb-4" data-toggle="modal"
+                            data-target="#exampleModal">Создать резюме
                     </button>
                 </#if>
             <#else>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-describedby="button-addon2">
+                <div class="input-group mb-4">
+                    <input type="text" class="form-control" placeholder="Поиск..." aria-describedby="button-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Найти</button>
                     </div>
                 </div>
             </#if>
             <#list resumes as resume>
+                <#if resume?is_first><div class="h3 text-center mb-4">Список резюме: </div></#if>
                 <div class="card text-center">
-                    <div class="card-header">
-                        ${resume.user.username}
+                    <div class="card-header h3">
+                        ${resume.resumeName}
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">${resume.resumeName}</h5>
-                        <p class="card-text">${resume.aboutMe}</p>
-                        <a href="/resume/${resume.id}" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text h4">Описание:</p>
+                        <p class="card-text h5">${resume.aboutMe}</p>
+                        <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
+                        <a href="/resume/${resume.id}" class="btn btn-primary">Посмотреть резюме</a>
                     </div>
                 </div>
             </#list>
         </div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
     </div>
 </div>
 </body>
@@ -65,7 +58,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Создать резюме</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -86,9 +79,14 @@
                             </div>
                             <div class="form-group">
                                 <select class="form-control" name="portfolio">
-                                    <#list portfolios as portfolio>
-                                        <option value="${portfolio.id}">${portfolio.topic}</option>
-                                    </#list>
+                                    <option selected value="" disabled hidden class="form-control">Прикрепить портфолио:</option>
+                                    <#if !portfolios?? && portfolios?has_content>
+                                        <option value="-1">Нет портфолио</option>
+                                    <#else>
+                                        <#list portfolios as portfolio>
+                                            <option class="form-control" value="${portfolio.id}">${portfolio.topic}</option>
+                                        </#list>
+                                    </#if>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -100,8 +98,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-primary" value="Save">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <input type="submit" class="btn btn-primary" value="Сохранить">
                         </div>
                     </form>
                 </div>

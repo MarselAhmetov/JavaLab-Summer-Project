@@ -7,6 +7,8 @@ import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.repositories.StudentRepository;
 import ru.itis.javalabsummerproject.service.interfaces.StudentService;
 
+import java.util.List;
+
 @Service
 public class StudentServiceImpl implements StudentService {
 
@@ -31,5 +33,10 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student getByUser(User user) {
         return studentRepository.getByUser(user);
+    }
+
+    @Override
+    public List<Student> findAll() {
+        return studentRepository.findAll();
     }
 }

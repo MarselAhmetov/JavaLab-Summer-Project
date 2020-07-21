@@ -1,4 +1,4 @@
-package ru.itis.javalabsummerproject.model.enamuration;
+package ru.itis.javalabsummerproject.model.enumiration;
 
 import org.springframework.security.core.GrantedAuthority;
 

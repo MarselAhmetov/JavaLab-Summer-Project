@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личный кабинет</title>
+    <#include "common/head-common.ftlh">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
 </head>
 
 <body>
-    <#include "common/header.ftlh"/>
+    <#include "header.ftlh"/>
     <main>
         <#if user??>
             <#if (user.role =="STUDENT" )>

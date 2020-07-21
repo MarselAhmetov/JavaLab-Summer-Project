@@ -3,7 +3,7 @@ package ru.itis.javalabsummerproject.model.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.itis.javalabsummerproject.model.enamuration.Role;
+import ru.itis.javalabsummerproject.model.enumiration.Role;
 
 @Data
 @NoArgsConstructor
