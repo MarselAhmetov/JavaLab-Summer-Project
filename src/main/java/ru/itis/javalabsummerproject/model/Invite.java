@@ -13,14 +13,18 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Invitation {
+public class Invite {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDateTime inviteTime;
+    private String text;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Company company;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Student student;
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Resume resume;
