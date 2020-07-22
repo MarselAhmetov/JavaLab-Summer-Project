@@ -10,11 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.itis.javalabsummerproject.model.Resume;
 import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.model.dto.ResumeDto;
+import ru.itis.javalabsummerproject.model.enumiration.Role;
 import ru.itis.javalabsummerproject.security.UserDetailsImpl;
-import ru.itis.javalabsummerproject.service.interfaces.CompetenceService;
-import ru.itis.javalabsummerproject.service.interfaces.PortfolioService;
-import ru.itis.javalabsummerproject.service.interfaces.ResumeService;
-import ru.itis.javalabsummerproject.service.interfaces.UserService;
+import ru.itis.javalabsummerproject.service.interfaces.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,6 +26,8 @@ public class ResumeController {
     private ResumeService resumeService;
     @Autowired
     private CompetenceService competenceService;
+    @Autowired
+    private VacancyService vacancyService;
     @Autowired
     private PortfolioService portfolioService;
 
@@ -61,6 +61,9 @@ public class ResumeController {
         ModelAndView modelAndView = new ModelAndView("resume");
         Resume resume = resumeService.getById(resumeId);
         if (resume != null) {
+            if (userDetails.getUser().getRole().equals(Role.COMPANY)) {
+                modelAndView.addObject("vacancies", vacancyService.getAllByUser(userDetails.getUser()));
+            }
             modelAndView.addObject("resume", resume);
             modelAndView.addObject("principal", userDetails);
         } else {

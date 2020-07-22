@@ -60,7 +60,7 @@
                                 <a class="dropdown-item" href="/resumes/${principal.user.id}">Мои резюме</a>
                                 <a class="dropdown-item" href="/portfolios/${principal.user.id}">Мои портфолио</a>
                                 <a class="dropdown-item" href="/responses">My responses</a>
-                                <a class="dropdown-item" href="/invitations">Invitations</a>
+                                <a class="dropdown-item" href="/invites">Invites</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/student/${principal.user.id}">Мой Профиль</a>
                                 <#break>
@@ -69,7 +69,7 @@
                                 <#break>
                             <#case "COMPANY">
                                 <a class="dropdown-item" href="/vacancies/${principal.user.id}">Мои вакансии</a>
-                                <a class="dropdown-item" href="/invitations">My invitations</a>
+                                <a class="dropdown-item" href="/invites">My invites</a>
                                 <a class="dropdown-item" href="/responses">Responses</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/company/${principal.user.id}">Мой Профиль</a>

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.model.Vacancy;
 import ru.itis.javalabsummerproject.model.dto.VacancyDto;
+import ru.itis.javalabsummerproject.model.enumiration.Role;
 import ru.itis.javalabsummerproject.security.UserDetailsImpl;
 import ru.itis.javalabsummerproject.service.interfaces.*;
 
@@ -24,6 +25,8 @@ public class VacancyController {
     private UserService userService;
     @Autowired
     private VacancyService vacancyService;
+    @Autowired
+    private ResumeService resumeService;
     @Autowired
     private CompetenceService competenceService;
 
@@ -59,6 +62,9 @@ public class VacancyController {
         ModelAndView modelAndView = new ModelAndView("vacancy");
         Vacancy vacancy = vacancyService.getById(vacancyId);
         if (vacancy != null) {
+            if (userDetails.getUser().getRole().equals(Role.STUDENT)) {
+                modelAndView.addObject("resumes", resumeService.getAllByUser(userDetails.getUser()));
+            }
             modelAndView.addObject("vacancy", vacancy);
             modelAndView.addObject("principal", userDetails);
         } else {

@@ -11,6 +11,7 @@ import ru.itis.javalabsummerproject.model.dto.ResponseDto;
 import ru.itis.javalabsummerproject.security.UserDetailsImpl;
 import ru.itis.javalabsummerproject.service.interfaces.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -49,10 +50,11 @@ public class ResponseController {
     // TODO: 19.07.2020 Доступно только студентам
     @PostMapping("/response/create")
     public ModelAndView newResponse(ResponseDto responseDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/invites/" + userDetails.getUser().getId());
+        ModelAndView modelAndView = new ModelAndView("redirect:/invites");
 
         Response response = Response.builder()
                 .text(responseDto.getText())
+                .responseTime(LocalDateTime.now())
                 .student(studentService.getByUser(userDetails.getUser()))
                 .company(companyService.getByUser(userService.getById(responseDto.getUserId())))
                 .resume(resumeService.getById(responseDto.getResumeId()))

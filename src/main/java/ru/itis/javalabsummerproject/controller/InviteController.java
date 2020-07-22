@@ -11,6 +11,7 @@ import ru.itis.javalabsummerproject.model.dto.InviteDto;
 import ru.itis.javalabsummerproject.security.UserDetailsImpl;
 import ru.itis.javalabsummerproject.service.interfaces.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -48,7 +49,7 @@ public class InviteController {
     // TODO: 19.07.2020 Доступно только компаниям
     @PostMapping("/invite/create")
     public ModelAndView newInvitation(InviteDto inviteDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/invites/" + userDetails.getUser().getId());
+        ModelAndView modelAndView = new ModelAndView("redirect:/invites");
 
         Invite invite = Invite.builder()
                 .text(inviteDto.getText())
@@ -56,8 +57,9 @@ public class InviteController {
                 .company(companyService.getByUser(userDetails.getUser()))
                 .resume(resumeService.getById(inviteDto.getResumeId()))
                 .vacancy(vacancyService.getById(inviteDto.getVacancyId()))
+                .inviteTime(LocalDateTime.now())
                 .build();
-
+        System.out.println(invite.toString());
         inviteService.save(invite);
         return modelAndView;
     }

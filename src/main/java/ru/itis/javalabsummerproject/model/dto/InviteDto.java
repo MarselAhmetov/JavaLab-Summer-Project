@@ -12,7 +12,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 public class InviteDto {
-    private LocalDateTime inviteTime;
     private String text;
     private Long userId;
     private Long resumeId;

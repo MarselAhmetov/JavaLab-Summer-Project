@@ -34,9 +34,15 @@
                         <span class="h5 ml-4">Список компетенций: Не указано</span>
                     </#if>
                     <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
-                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="/vacancies"><- Вернуться к списку
+                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="/vacancies"><- Вернуться к
+                            списку
                             вакансий</a>
                     </p>
+                    <#if principal.user.role = "STUDENT">
+                        <button type="button" class="btn btn-primary btn-lg btn-block mb-4" data-toggle="modal"
+                                data-target="#exampleModal">Откликнуться
+                        </button>
+                    </#if>
                 </div>
                 <div class="card-footer text-muted text-center">
                     Дата создания: ${vacancy.creationDate}
@@ -46,6 +52,49 @@
         <div class="col-2"></div>
     </div>
 </div>
+<#if principal??>
+    <#if principal.user.role = "STUDENT">
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Создать резюме</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="/response/create" method="POST" class="form">
+                        <input type="hidden" name="userId" class="form-control" value="${vacancy.user.id}"/>
+                        <input type="hidden" name="vacancyId" class="form-control" value="${vacancy.id}"/>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <textarea type="text" name="text" class="form-control"
+                                          placeholder="Текст приглашения"></textarea>
+                            </div>
+                            <#if resumes??>
+                                <div class="form-group">
+                                    <select class="form-control" name="resumeId">
+                                        <#list resumes as resume>
+                                            <option class="form-control"
+                                                    value="${resume.id}">${resume.resumeName}</option>
+                                        </#list>
+                                    </select>
+                                </div>
+                            </#if>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <input type="submit" class="btn btn-primary" value="Сохранить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </#if>
+</#if>
 </body>
 
 </html>
