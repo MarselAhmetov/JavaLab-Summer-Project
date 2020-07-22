@@ -15,7 +15,7 @@
 <div class="bg-image"></div>
 <main class="content_wrapper">
     <div class="back_wrapper">
-        <a href="/signUp" class="back link"><- Назад</a>
+        <a href="/signUp" class="back link mb-4"><- Назад</a>
     </div>
     <div class="title_wrapper">
         <h2 class="title">Регистрация</h2>
@@ -24,34 +24,34 @@
         <form action="/signUp/company" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Название организации</label>
-                <input type="text" name="name" class="input" />
+                <input type="text" name="name" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Адрес оргацизации</label>
-                <input type="text" name="address" class="input" />
+                <input type="text" name="address" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Описание</label>
-                <textarea type="text" name="description" class="input" rows="3"></textarea>
+                <textarea type="text" name="description" class="input form-control" rows="3"></textarea>
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Имя пользователя</label>
-                <input type="text" name="username" class="input" />
+                <input type="text" name="username" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Электронная почта</label>
-                <input type="email" name="email" class="input" />
+                <input type="email" name="email" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Пароль</label>
-                <input type="password" name="password" class="input" />
+                <input type="password" name="password" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Подтвердите пароль</label>
-                <input type="password" name="confirmPassword" class="input" />
+                <input type="password" name="confirmPassword" class="input form-control" />
             </div>
             <div class="input_wrapper submit_button_wrapper">
-                <input type="submit" class="submit_button" value="Зарегистрироваться">
+                <input type="submit" class="submit_button btn btn-block" value="Зарегистрироваться">
             </div>
         </form>
         <div class="else">

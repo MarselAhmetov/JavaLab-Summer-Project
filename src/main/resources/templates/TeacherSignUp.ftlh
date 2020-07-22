@@ -24,49 +24,49 @@
         <form action="/signUp/teacher" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Имя</label>
-                <input type="text" name="firstName" class="input" />
+                <input type="text" name="firstName" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Фамилия</label>
-                <input type="text" name="lastName" class="input" />
+                <input type="text" name="lastName" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Отчество (если есть)</label>
-                <input type="text" name="middleName" class="input" />
+                <input type="text" name="middleName" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Преподаваемый предмет</label>
-                <input type="text" name="subject" class="input" />
+                <input type="text" name="subject" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Имя пользователя</label>
-                <input type="text" name="username" class="input" />
+                <input type="text" name="username" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Электронная почта</label>
-                <input type="email" name="email" class="input" />
+                <input type="email" name="email" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Пароль</label>
-                <input type="password" name="password" class="input" />
+                <input type="password" name="password" class="input form-control" />
             </div>
             <div class="input_wrapper">
                 <label class="input_label">Подтвердите пароль</label>
-                <input type="password" name="confirmPassword" class="input" />
+                <input type="password" name="confirmPassword" class="input form-control" />
             </div>
             <div class="input_label_wrapper">
                 <label class="input_label">Кто вы?</label>
             </div>
             <div class="checkboxes">
                 <label class="checkbox_label">
-                    <input type="checkbox" name="sex" value="male">Мужской
+                    <input type="checkbox" name="sex" value="male" class="mr-1">Мужской
                 </label>
                 <label class="checkbox_label">
-                    <input type="checkbox" name="sex" value="female">Женский
+                    <input type="checkbox" name="sex" value="female" class="mr-1 ml-1">Женский
                 </label>
             </div>
             <div class="input_wrapper submit_button_wrapper">
-                <input type="submit" class="submit_button" value="Зарегистрироваться">
+                <input type="submit" class="submit_button btn btn-block" value="Зарегистрироваться">
             </div>
         </form>
         <div class="else">

@@ -13,19 +13,19 @@
 <body class="body">
     <div class="bg-image"></div>
     <main class="content_wrapper">
-        <div class="title_wrapper">
-            <h2 class="title">Регистрация</h2>
-            <h5>Кем вы являетесь?</h5>
+        <div class="title_wrapper d-flex flex-column">
+            <a class="h3">Регистрация</a>
+            <a class="h4 text-muted">Кем вы являетесь?</a>
         </div>
         <div class="items_wrapper">
             <div class="else">
-                <a href="/signUp/student" class="link">Я студент</a>
+                <a href="/signUp/student" class="link h5">Я студент</a>
             </div>
             <div class="else">
-                <a href="/signUp/company"  class="link">Я работодатель</a>
+                <a href="/signUp/company"  class="link h5">Я работодатель</a>
             </div>
             <div class="else">
-                <a href="/signUp/teacher"  class="link">Я преподаватель</a>
+                <a href="/signUp/teacher"  class="link h5">Я преподаватель</a>
             </div>
         </div>
     </main>
