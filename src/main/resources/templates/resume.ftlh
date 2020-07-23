@@ -28,8 +28,8 @@
                         <p class="card-text btn btn-secondary h5">${competence.name}</p>
                     </#list>
                     <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
-                    <p class="card-text text-center h6"><a href="/resumes/${principal.user.id}"
-                                                           class="btn btn-secondary"><- Вернуться к списку резюме</a>
+                    <p class="card-text text-center h6"><a href="/resumes/${resume.user.id}"
+                                                           class="btn btn-secondary"><- К списку резюме студента</a>
                     </p>
                     <#if principal.user.role = "COMPANY">
                         <button type="button" class="btn btn-primary btn-lg btn-block mb-4" data-toggle="modal"

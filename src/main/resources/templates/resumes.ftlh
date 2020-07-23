@@ -31,7 +31,7 @@
                 </div>
             </#if>
             <#list resumes as resume>
-                <#if resume?is_first><div class="h3 text-center mb-4">Список резюме: </div></#if>
+                <#if resume?is_first><div class="h3 text-center mb-4">Список резюме ${resume.user.username}: </div></#if>
                 <div class="card text-center">
                     <div class="card-header h3">
                         ${resume.resumeName}
