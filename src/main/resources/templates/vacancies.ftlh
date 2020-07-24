@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список вакансий</title>
     <#include "common/head-common.ftlh">
-    <link rel="stylesheet" type="text/css" href="css/common.css">
-    <script src="js/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/css/common.css">
+    <script src="http://34.71.144.13:8888/javalab-summer-project-0.0.1/js/script.js"></script>
 </head>
 
 <body class="body">
