@@ -19,13 +19,13 @@
         </div>
         <div class="items_wrapper">
             <div class="else">
-                <a href="/signUp/student" class="link h5">Я студент</a>
+                <a href="signUp/student" class="link h5">Я студент</a>
             </div>
             <div class="else">
-                <a href="/signUp/company"  class="link h5">Я работодатель</a>
+                <a href="signUp/company"  class="link h5">Я работодатель</a>
             </div>
             <div class="else">
-                <a href="/signUp/teacher"  class="link h5">Я преподаватель</a>
+                <a href="signUp/teacher"  class="link h5">Я преподаватель</a>
             </div>
         </div>
     </main>

@@ -47,7 +47,7 @@
                         <p class="card-text h4 text-center">Описание:</p>
                         <p class="card-text h5 ml-4">${vacancy.description}</p>
                         <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
-                        <p class="card-text text-center"><a href="/vacancy/${vacancy.id}" class="btn btn-primary ">Посмотреть вакансию</a></p>
+                        <p class="card-text text-center"><a href="vacancy/${vacancy.id}" class="btn btn-primary ">Посмотреть вакансию</a></p>
                     </div>
                     <div class="card-footer text-muted text-center">
                         Дата создания: ${vacancy.creationDate}
@@ -73,7 +73,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/vacancy/create" method="POST" class="form">
+                    <form action="vacancy/create" method="POST" class="form">
                         <div class="modal-body">
                             <div class="form-group">
                                 <input type="text" name="vacancyName" class="form-control"

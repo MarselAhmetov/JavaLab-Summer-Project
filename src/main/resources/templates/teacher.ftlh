@@ -19,7 +19,7 @@
             <div class="text-center">
                 <p class="card-text h4 mb-4">Информация о преподавателе ${teacher.lastName} ${teacher.firstName} ${teacher.middleName}</p>
             </div>
-            <form action="/edit/teacher">
+            <form action="edit/teacher">
                 <div class="form-group">
                     <label class="ml-4 h4">Электронная почта</label>
                     <input type="email" name="email" class="form-control" <#if !principal?? || principal.user.id != teacher.user.id> disabled</#if> placeholder="Enter email" value="${teacher.user.email}">

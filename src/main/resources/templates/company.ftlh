@@ -19,7 +19,7 @@
             <div class="text-center">
                 <p class="card-text h4 mb-4">Информация о компании ${company.name} </p>
             </div>
-            <form action="/edit/company" class="mb-4">
+            <form action="edit/company" class="mb-4">
                 <div class="form-group">
                     <label class="ml-4 h4">Электронная почта</label>
                     <input type="email" name="email" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Enter email" value="${company.user.email}">
@@ -48,7 +48,7 @@
             </form>
             <div class="text-center">
                 <p class="h4 mb-4">Дополнительно: </p>
-                <a class="btn btn-primary" href="/vacancies/${company.user.id}">Вакансии компании</a>
+                <a class="btn btn-primary" href="vacancies/${company.user.id}">Вакансии компании</a>
             </div>
         </div>
         <div class="col-2"></div>

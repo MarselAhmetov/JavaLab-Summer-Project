@@ -37,13 +37,13 @@
                                 </p>
                                 <p class="card-text mb-2 h5">Мои резюме: </p>
                                 <#list resumes as resume>
-                                    <p class="card-text mb-2"><a href="/resume/${resume.id}" class="btn btn-secondary">${resume.resumeName}</a></p>
+                                    <p class="card-text mb-2"><a href="resume/${resume.id}" class="btn btn-secondary">${resume.resumeName}</a></p>
                                     <#if resumes?has_next>
                                         ,
                                     </#if>
                                 </#list>
                                 <p class="card-text text-muted h6">Создатель: ${student.user.username}</p>
-                                <p class="card-text text-center h6"><a href="/student/${student.user.id}"
+                                <p class="card-text text-center h6"><a href="student/${student.user.id}"
                                                                        class="btn btn-primary">Подробнее о студенте...</a></p>
                             </div>
                         </div>

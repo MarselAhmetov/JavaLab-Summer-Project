@@ -15,13 +15,13 @@
 <div class="bg-image"></div>
 <main class="content_wrapper">
     <div class="back_wrapper">
-        <a href="/signUp" class="back link mb-4"><- Назад</a>
+        <a href="signUp" class="back link mb-4"><- Назад</a>
     </div>
     <div class="title_wrapper">
         <h2 class="title">Регистрация</h2>
     </div>
     <div class="form_wrapper">
-        <form action="/signUp/company" method="POST" class="form">
+        <form action="signUp/company" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Название организации</label>
                 <input type="text" name="name" class="input form-control" />
@@ -55,7 +55,7 @@
             </div>
         </form>
         <div class="else">
-            <a class="link" href="/signIn">Уже есть аккаунт?</a>
+            <a class="link" href="signIn">Уже есть аккаунт?</a>
         </div>
     </div>
 </main>

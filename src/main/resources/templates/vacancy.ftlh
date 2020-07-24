@@ -34,7 +34,7 @@
                         <span class="h5 ml-4">Список компетенций: Не указано</span>
                     </#if>
                     <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
-                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="/vacancies"><- Вернуться к
+                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="vacancies"><- Вернуться к
                             списку
                             вакансий</a>
                     </p>
@@ -65,7 +65,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/response/create" method="POST" class="form">
+                    <form action="response/create" method="POST" class="form">
                         <input type="hidden" name="userId" class="form-control" value="${vacancy.user.id}"/>
                         <input type="hidden" name="vacancyId" class="form-control" value="${vacancy.id}"/>
                         <div class="modal-body">

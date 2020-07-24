@@ -40,7 +40,7 @@
                         <p class="card-text h4">Описание:</p>
                         <p class="card-text h5">${resume.aboutMe}</p>
                         <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
-                        <a href="/resume/${resume.id}" class="btn btn-primary">Посмотреть резюме</a>
+                        <a href="resume/${resume.id}" class="btn btn-primary">Посмотреть резюме</a>
                     </div>
                 </div>
             </#list>
@@ -63,7 +63,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/resume/create" method="POST" class="form">
+                    <form action="resume/create" method="POST" class="form">
                         <div class="modal-body">
                             <div class="form-group">
                                 <input type="text" name="resumeName" class="form-control"

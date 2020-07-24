@@ -40,10 +40,10 @@
                         <h5 class="card-title">${invite.resume.resumeName}</h5>
                         <p class="card-text">${invite.text}</p>
                         <#if principal.user.role = "STUDENT">
-                            <a href="/company/${invite.company.user.id}" class="btn btn-primary">Go to company</a>
+                            <a href="company/${invite.company.user.id}" class="btn btn-primary">Go to company</a>
                         </#if>
                         <#if principal.user.role = "COMPANY">
-                            <a href="/student/${invite.student.user.id}" class="btn btn-primary">Go to student</a>
+                            <a href="student/${invite.student.user.id}" class="btn btn-primary">Go to student</a>
                         </#if>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/resume/create" method="POST" class="form">
+                    <form action="resume/create" method="POST" class="form">
                         <div class="modal-body">
                             <div class="form-group">
                                 <input type="text" name="resumeName" class="form-control"

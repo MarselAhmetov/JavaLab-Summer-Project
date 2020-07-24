@@ -34,7 +34,7 @@
                             <div class="card-body">
 
                                 <p class="card-text mb-2">${portfolio.content}</p>
-                                <p class="card-text"><a href="/portfolio/${portfolio.id}" class="btn btn-primary">Посмотреть
+                                <p class="card-text"><a href="portfolio/${portfolio.id}" class="btn btn-primary">Посмотреть
                                         портфолио</a></p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/portfolio/create" method="POST" class="form">
+                    <form action="portfolio/create" method="POST" class="form">
                         <div class="modal-body">
 
                             <div class="form-group">

@@ -28,7 +28,7 @@
                         <p class="card-text btn btn-secondary h5">${competence.name}</p>
                     </#list>
                     <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
-                    <p class="card-text text-center h6"><a href="/resumes/${resume.user.id}"
+                    <p class="card-text text-center h6"><a href="resumes/${resume.user.id}"
                                                            class="btn btn-secondary"><- К списку резюме студента</a>
                     </p>
                     <#if principal.user.role = "COMPANY">
@@ -58,7 +58,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="/invite/create" method="POST" class="form">
+                    <form action="invite/create" method="POST" class="form">
                         <input type="hidden" name="userId" class="form-control" value="${resume.user.id}"/>
                         <input type="hidden" name="resumeId" class="form-control" value="${resume.id}"/>
                         <div class="modal-body">

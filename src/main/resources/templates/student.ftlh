@@ -19,7 +19,7 @@
             <div class="text-center">
                 <p class="card-text h4 mb-4">Информация о студенте ${student.lastName}  ${student.firstName} ${student.middleName}</p>
             </div>
-            <form action="/edit/student">
+            <form action="edit/student">
                 <div class="form-group">
                     <label class="ml-4 h4">Электронная почта</label>
                     <input type="email" name="email" class="form-control" <#if !principal?? || principal.user.id != student.user.id> disabled</#if> placeholder="Enter email" value="${student.user.email}">
@@ -51,8 +51,8 @@
                 </#if>
                 <div class="text-center">
                     <p class="h4 mb-4">Дополнительно: </p>
-                    <a class="btn btn-primary mb-2" href="/resumes/${student.user.id}">Резюме студента</a>
-                    <a class="btn btn-primary mb-2" href="/portfolios/${student.user.id}">Портфолио студента</a>
+                    <a class="btn btn-primary mb-2" href="resumes/${student.user.id}">Резюме студента</a>
+                    <a class="btn btn-primary mb-2" href="portfolios/${student.user.id}">Портфолио студента</a>
                 </div>
             </form>
         </div>
