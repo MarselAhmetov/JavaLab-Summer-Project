@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <#include "common/head-common.ftlh">
-    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/signUp.css">
+    <link rel="stylesheet" type="text/css" href="javalab-summer-project-0.0.1/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="javalab-summer-project-0.0.1/static/css/signUp.css">
     <title>Регистрация: Кем вы являетесь?</title>
 </head>
 <body class="body">
