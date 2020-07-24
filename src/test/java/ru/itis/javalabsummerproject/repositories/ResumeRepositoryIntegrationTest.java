@@ -27,13 +27,11 @@ public class ResumeRepositoryIntegrationTest {
     @Test
     public void whenGetAllByUser_thenReturnListOfResumes() {
         User user = User.builder()
-                .id(1L)
                 .username("username")
                 .role(Role.STUDENT)
                 .build();
 
         Resume resume1 = Resume.builder()
-                .id(1L)
                 .aboutMe("aboutMe")
                 .desiredSalary(111)
                 .resumeName("resume1")
@@ -41,7 +39,6 @@ public class ResumeRepositoryIntegrationTest {
                 .build();
 
         Resume resume2 = Resume.builder()
-                .id(2L)
                 .desiredSalary(111)
                 .aboutMe("aboutMe")
                 .resumeName("resume2")
@@ -49,9 +46,9 @@ public class ResumeRepositoryIntegrationTest {
                 .user(user)
                 .build();
 
-        entityManager.merge(user);
-        entityManager.merge(resume1);
-        entityManager.merge(resume2);
+        entityManager.persist(user);
+        entityManager.persist(resume1);
+        entityManager.persist(resume2);
 
         List<Resume> resumeList = resumeRepository.getAllByUser(user);
 

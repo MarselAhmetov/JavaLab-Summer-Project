@@ -25,6 +25,6 @@ public class Teacher {
     private String lastName;
 
     @OneToOne
-    @Cascade(org.hibernate.annotations.CascadeType.ALL)
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
     private User user;
 }

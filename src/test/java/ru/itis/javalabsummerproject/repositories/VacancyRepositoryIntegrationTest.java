@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 import ru.itis.javalabsummerproject.model.Resume;
 import ru.itis.javalabsummerproject.model.User;
 import ru.itis.javalabsummerproject.model.Vacancy;
@@ -29,24 +30,21 @@ public class VacancyRepositoryIntegrationTest {
     public void whenGetAllByUser_thenReturnListOfVacancies() {
         User user = User.builder()
                 .username("username")
-                .id(1L)
                 .build();
 
         Vacancy vacancy1 = Vacancy.builder()
-                .id(1L)
                 .vacancyName("vacancy1")
                 .user(user)
                 .build();
 
         Vacancy vacancy2 = Vacancy.builder()
-                .id(2L)
                 .vacancyName("vacancy2")
                 .user(user)
                 .build();
 
-        entityManager.merge(user);
-        entityManager.merge(vacancy1);
-        entityManager.merge(vacancy2);
+        entityManager.persist(user);
+        entityManager.persist(vacancy1);
+        entityManager.persist(vacancy2);
 
         List<Vacancy> vacancyList = vacancyRepository.getAllByUser(user);
 

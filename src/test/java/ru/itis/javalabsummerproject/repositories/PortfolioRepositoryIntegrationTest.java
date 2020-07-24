@@ -27,22 +27,19 @@ public class PortfolioRepositoryIntegrationTest {
     public void whenGetAllByUser_thenReturnListOfPortfolios() {
         User user = User.builder()
                 .username("username")
-                .id(1L)
                 .build();
 
         Portfolio portfolio1 = Portfolio.builder()
-                .id(1L)
                 .user(user)
                 .build();
 
         Portfolio portfolio2 = Portfolio.builder()
-                .id(2L)
                 .user(user)
                 .build();
 
-        entityManager.merge(user);
-        entityManager.merge(portfolio1);
-        entityManager.merge(portfolio2);
+        entityManager.persist(user);
+        entityManager.persist(portfolio1);
+        entityManager.persist(portfolio2);
 
         List<Portfolio> portfolioList = portfolioRepository.getAllByUser(user);
 

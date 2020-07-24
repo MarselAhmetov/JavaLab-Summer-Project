@@ -25,7 +25,6 @@ public class TeacherRepositoryIntegrationTest {
     @Test
     public void whenGetByUser_thenReturnTeacher() {
         User user = User.builder()
-                .id(1L)
                 .username("username")
                 .role(Role.STUDENT)
                 .email("email")
@@ -35,10 +34,10 @@ public class TeacherRepositoryIntegrationTest {
         Teacher teacher = Teacher.builder()
                 .firstName("firstName")
                 .user(user)
-                .id(1L)
                 .build();
 
-        entityManager.merge(teacher);
+        entityManager.persist(user);
+        entityManager.persist(teacher);
 
         Teacher found = teacherRepository.getByUser(user);
 
