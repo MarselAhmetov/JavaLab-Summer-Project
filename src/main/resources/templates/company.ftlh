@@ -48,7 +48,7 @@
             </form>
             <div class="text-center">
                 <p class="h4 mb-4">Дополнительно: </p>
-                <a class="btn btn-primary" href="vacancies/${company.user.id}">Вакансии компании</a>
+                <a class="btn btn-primary" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/vacancies/${company.user.id}">Вакансии компании</a>
             </div>
         </div>
         <div class="col-2"></div>

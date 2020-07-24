@@ -43,7 +43,7 @@
 <#--            </form>-->
 <#--        </div>-->
         <div class="else">
-            <a class="link" href="/signUp">Нет аккаунта?</a>
+            <a class="link" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp">Нет аккаунта?</a>
         </div>
     </div>
 </main>

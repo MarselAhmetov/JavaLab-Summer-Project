@@ -34,7 +34,7 @@
                             <div class="card-body">
 
                                 <p class="card-text mb-2">${portfolio.content}</p>
-                                <p class="card-text"><a href="portfolio/${portfolio.id}" class="btn btn-primary">Посмотреть
+                                <p class="card-text"><a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/portfolio/${portfolio.id}" class="btn btn-primary">Посмотреть
                                         портфолио</a></p>
                             </div>
                         </div>

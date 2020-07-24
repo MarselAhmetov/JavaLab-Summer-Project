@@ -47,7 +47,7 @@
                         <p class="card-text h4 text-center">Описание:</p>
                         <p class="card-text h5 ml-4">${vacancy.description}</p>
                         <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
-                        <p class="card-text text-center"><a href="vacancy/${vacancy.id}" class="btn btn-primary ">Посмотреть вакансию</a></p>
+                        <p class="card-text text-center"><a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/vacancy/${vacancy.id}" class="btn btn-primary ">Посмотреть вакансию</a></p>
                     </div>
                     <div class="card-footer text-muted text-center">
                         Дата создания: ${vacancy.creationDate}

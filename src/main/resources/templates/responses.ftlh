@@ -40,10 +40,10 @@
                         <h5 class="card-title">${response.vacancy.vacancyName}</h5>
                         <p class="card-text">${response.text}</p>
                         <#if principal.user.role = "COMPANY">
-                            <a href="student/${response.student.user.id}" class="btn btn-primary">Go to student</a>
+                            <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/student/${response.student.user.id}" class="btn btn-primary">Go to student</a>
                         </#if>
                         <#if principal.user.role = "STUDENT">
-                            <a href="company/${response.company.user.id}" class="btn btn-primary">Go to company</a>
+                            <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/company/${response.company.user.id}" class="btn btn-primary">Go to company</a>
                         </#if>
                     </div>
                 </div>

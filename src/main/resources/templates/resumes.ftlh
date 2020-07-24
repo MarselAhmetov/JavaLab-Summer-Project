@@ -40,7 +40,7 @@
                         <p class="card-text h4">Описание:</p>
                         <p class="card-text h5">${resume.aboutMe}</p>
                         <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
-                        <a href="resume/${resume.id}" class="btn btn-primary">Посмотреть резюме</a>
+                        <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/resume/${resume.id}" class="btn btn-primary">Посмотреть резюме</a>
                     </div>
                 </div>
             </#list>

@@ -34,7 +34,7 @@
                         <span class="h5 ml-4">Список компетенций: Не указано</span>
                     </#if>
                     <p class="card-text h6 text-muted"> Создатель: ${vacancy.user.username} </p>
-                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="vacancies"><- Вернуться к
+                    <p class="card-text h6 text-center"><a class="btn btn-secondary" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/vacancies"><- Вернуться к
                             списку
                             вакансий</a>
                     </p>

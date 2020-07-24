@@ -51,8 +51,8 @@
                 </#if>
                 <div class="text-center">
                     <p class="h4 mb-4">Дополнительно: </p>
-                    <a class="btn btn-primary mb-2" href="resumes/${student.user.id}">Резюме студента</a>
-                    <a class="btn btn-primary mb-2" href="portfolios/${student.user.id}">Портфолио студента</a>
+                    <a class="btn btn-primary mb-2" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/resumes/${student.user.id}">Резюме студента</a>
+                    <a class="btn btn-primary mb-2" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/portfolios/${student.user.id}">Портфолио студента</a>
                 </div>
             </form>
         </div>

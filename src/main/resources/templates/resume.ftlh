@@ -28,7 +28,7 @@
                         <p class="card-text btn btn-secondary h5">${competence.name}</p>
                     </#list>
                     <h5 class="card-text text-muted h6">Создатель: ${resume.user.username}</h5>
-                    <p class="card-text text-center h6"><a href="resumes/${resume.user.id}"
+                    <p class="card-text text-center h6"><a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/resumes/${resume.user.id}"
                                                            class="btn btn-secondary"><- К списку резюме студента</a>
                     </p>
                     <#if principal.user.role = "COMPANY">

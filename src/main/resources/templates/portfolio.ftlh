@@ -24,7 +24,7 @@
                     <p class="card-text h5 mb-2">Описание: </p>
                     <p class="card-text mb-2">${portfolio.content}</p>
                     <p class="card-text text-muted h6">Создатель: ${portfolio.user.username}</p>
-                    <p class="card-text text-center h6"><a href="portfolios/${portfolio.user.id}" class="btn btn-secondary"><- Вернуться к списку портфолио</a></p>
+                    <p class="card-text text-center h6"><a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/portfolios/${portfolio.user.id}" class="btn btn-secondary"><- Вернуться к списку портфолио</a></p>
                 </div>
                 <div class="card-footer text-muted">
                     Confirmed?

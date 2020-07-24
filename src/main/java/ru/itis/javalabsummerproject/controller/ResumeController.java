@@ -47,7 +47,7 @@ public class ResumeController {
         if (user != null) {
             List<Resume> resumes = resumeService.getAllByUser(user);
             modelAndView.addObject("user", user);
-            modelAndView.addObject("resumes", resumes);
+            modelAndView.addObject("resumes", r esumes);
             modelAndView.addObject("principal", userDetails);
             modelAndView.addObject("portfolios", portfolioService.getAllByUser(user));
         } else {

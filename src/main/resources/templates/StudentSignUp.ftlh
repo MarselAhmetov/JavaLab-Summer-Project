@@ -15,13 +15,13 @@
 <div class="bg-image"></div>
 <main class="content_wrapper">
     <div class="back_wrapper">
-        <a href="signUp" class="back link"><- Назад</a>
+        <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp" class="back link"><- Назад</a>
     </div>
     <div class="title_wrapper">
         <h2 class="title">Регистрация</h2>
     </div>
     <div class="form_wrapper">
-        <form action="signUp/student" method="POST" class="form">
+        <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp/student" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Имя</label>
                 <input type="text" name="firstName" class="input form-control"/>
@@ -65,7 +65,7 @@
             </div>
         </form>
         <div class="else">
-            <a class="link" href="signIn">Уже есть аккаунт?</a>
+            <a class="link" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signIn">Уже есть аккаунт?</a>
         </div>
     </div>
 </main>

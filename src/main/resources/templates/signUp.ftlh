@@ -19,13 +19,13 @@
         </div>
         <div class="items_wrapper">
             <div class="else">
-                <a href="signUp/student" class="link h5">Я студент</a>
+                <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp/student" class="link h5">Я студент</a>
             </div>
             <div class="else">
-                <a href="signUp/company"  class="link h5">Я работодатель</a>
+                <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp/company"  class="link h5">Я работодатель</a>
             </div>
             <div class="else">
-                <a href="signUp/teacher"  class="link h5">Я преподаватель</a>
+                <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp/teacher"  class="link h5">Я преподаватель</a>
             </div>
         </div>
     </main>

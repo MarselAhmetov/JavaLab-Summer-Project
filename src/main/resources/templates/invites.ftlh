@@ -40,10 +40,10 @@
                         <h5 class="card-title">${invite.resume.resumeName}</h5>
                         <p class="card-text">${invite.text}</p>
                         <#if principal.user.role = "STUDENT">
-                            <a href="company/${invite.company.user.id}" class="btn btn-primary">Go to company</a>
+                            <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/company/${invite.company.user.id}" class="btn btn-primary">Go to company</a>
                         </#if>
                         <#if principal.user.role = "COMPANY">
-                            <a href="student/${invite.student.user.id}" class="btn btn-primary">Go to student</a>
+                            <a href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/student/${invite.student.user.id}" class="btn btn-primary">Go to student</a>
                         </#if>
                     </div>
                 </div>
