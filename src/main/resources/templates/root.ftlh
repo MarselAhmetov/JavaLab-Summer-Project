@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Начальная страница</title>
     <#include "common/head-common.ftlh"/>
-    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="http://34.71.144.13:8888/javalab-summer-project-0.0.1/css/common.css" type="text/css">
 </head>
 <body class="body">
 <#include "header.ftlh">
