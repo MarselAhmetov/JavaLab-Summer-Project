@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация Преподавателя</title>
     <#include "common/head-common.ftlh">
-    <link rel="stylesheet" type="text/css" href="/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/css/signUp.css">
-    <script src="/js/signUp.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/signUp.css">
+    <script src="/static/js/signUp.js"></script>
 </head>
 
 <body class="body">
