@@ -58,7 +58,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="invite/create" method="POST" class="form">
+                    <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/invite/create" method="POST" class="form">
                         <input type="hidden" name="userId" class="form-control" value="${resume.user.id}"/>
                         <input type="hidden" name="resumeId" class="form-control" value="${resume.id}"/>
                         <div class="modal-body">

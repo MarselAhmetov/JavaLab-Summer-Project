@@ -65,7 +65,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="response/create" method="POST" class="form">
+                    <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/response/create" method="POST" class="form">
                         <input type="hidden" name="userId" class="form-control" value="${vacancy.user.id}"/>
                         <input type="hidden" name="vacancyId" class="form-control" value="${vacancy.id}"/>
                         <div class="modal-body">

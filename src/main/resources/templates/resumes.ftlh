@@ -63,7 +63,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="resume/create" method="POST" class="form">
+                    <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/resume/create" method="POST" class="form">
                         <div class="modal-body">
                             <div class="form-group">
                                 <input type="text" name="resumeName" class="form-control"

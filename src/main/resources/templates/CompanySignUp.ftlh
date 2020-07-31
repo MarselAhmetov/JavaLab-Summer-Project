@@ -21,7 +21,7 @@
         <h2 class="title">Регистрация</h2>
     </div>
     <div class="form_wrapper">
-        <form action="signUp/company" method="POST" class="form">
+        <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signUp/company" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Название организации</label>
                 <input type="text" name="name" class="input form-control" />

@@ -17,7 +17,7 @@
         <h2 class="title">Авторизация</h2>
     </div>
     <div class="form_wrapper">
-        <form action="signIn" method="POST" class="form">
+        <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/signIn" method="POST" class="form">
             <div class="input_wrapper">
                 <label class="input_label">Электронная почта</label>
                 <input type="email" name="email" class="input form-control" />

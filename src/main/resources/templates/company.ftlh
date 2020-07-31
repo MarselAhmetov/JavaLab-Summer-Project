@@ -19,7 +19,7 @@
             <div class="text-center">
                 <p class="card-text h4 mb-4">Информация о компании ${company.name} </p>
             </div>
-            <form action="edit/company" class="mb-4">
+            <form action="http://34.71.144.13:8888/javalab-summer-project-0.0.1/edit/company" class="mb-4">
                 <div class="form-group">
                     <label class="ml-4 h4">Электронная почта</label>
                     <input type="email" name="email" class="form-control" <#if !principal?? || principal.user.id != company.user.id> disabled</#if> placeholder="Enter email" value="${company.user.email}">
